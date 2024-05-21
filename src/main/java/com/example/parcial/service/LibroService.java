@@ -60,7 +60,7 @@ public class LibroService {
         return modelMapper.map(libro, LibroDTO.class);
     }
 
-    private LibroDTO delete(Long id) {
+    public LibroDTO delete(Long id) {
         Libro libro = libroRepository.findById(id).orElse(null);
         if (libro == null) {
             throw new IllegalArgumentException("El libro no existe");
